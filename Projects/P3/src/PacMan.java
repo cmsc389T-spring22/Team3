@@ -34,10 +34,12 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location> validMoves = new ArrayList<Location>();
-		validMoves.add(new Location(myLoc.x + 5, myLoc.y));
-		if(!validMoves.isEmpty()) {
-			return myMap.move(myName, validMoves.get(0), Map.Type.PACMAN);
+		ArrayList<Location> possibleLocations = get_valid_moves();
+		if (possibleLocations.size() != 0) {
+			int randomIndx = 0;
+			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.PACMAN);
+			return true;
 		}
 		return false;
 	}
