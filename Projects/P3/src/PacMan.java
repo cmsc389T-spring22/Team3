@@ -37,7 +37,7 @@ public class PacMan{
 
 	public boolean move() {
 		ArrayList<Location> validMoves = new ArrayList<Location>();
-		validMoves.add(new Location(myLoc.x + 5, myLoc.y));
+		validMoves.add(new Location(myLoc.x, myLoc.y));
 		if(!validMoves.isEmpty()) {
 			return myMap.move(myName, validMoves.get(0), Map.Type.PACMAN);
 		}

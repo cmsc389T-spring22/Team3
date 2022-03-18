@@ -33,11 +33,14 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		ArrayList<Location> valid_moves = get_valid_moves();
-		// if (valid_moves.size() > 0) {
-		// 	return myMap.move(myName, valid_moves.get(0), Map.Type.GHOST); 
-		// }
-
+		ArrayList<Location> possibleLocations = get_valid_moves();
+		if (possibleLocations.size() != 0) {
+			myLoc = new Location(possibleLocations.get(0).x, possibleLocations.get(0).y);
+			int randomIndx = 0 + (int)(Math.random() * (((possibleLocations.size()-1) - 0) + 1));
+			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.GHOST);
+			return true;
+		}
 		return false;
 	}
 
