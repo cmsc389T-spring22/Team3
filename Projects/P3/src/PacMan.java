@@ -17,16 +17,16 @@ public class PacMan{
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validLocs = new ArrayList<Location>();
 
-		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x + 1, myLoc.y));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.EMPTY) ||myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x, myLoc.y - 1));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x, myLoc.y + 1));
 		}
 
