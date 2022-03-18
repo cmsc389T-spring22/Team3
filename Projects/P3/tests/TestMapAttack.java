@@ -13,7 +13,7 @@ public class TestMapAttack extends TestCase {
 		Ghost blinky = nf.addGhost(new Location(1, 2), "Blinky", Color.red);
 		Ghost clyde = nf.addGhost(new Location(1, 3), "Clyde", Color.orange);
 
-		assertTrue(map.attack("Blinky"));
+		assertFalse(map.attack("Blinky"));
 		assertFalse(map.attack("Clyde"));
 	}
 }
