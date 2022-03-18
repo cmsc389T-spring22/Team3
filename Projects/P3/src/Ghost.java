@@ -15,8 +15,6 @@ public class Ghost{
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validLocs = new ArrayList<Location>();
 
-		validLocs.add(new Location(myLoc.x, myLoc.y + 100));
-
 		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY)) {
 			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
 		} 
