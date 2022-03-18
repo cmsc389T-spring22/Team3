@@ -13,6 +13,6 @@ public class TestPacManInRange extends TestCase {
 		PacMan pacman = nf.addPacMan(new Location(1, 1));
 	
 		assertFalse(blinky.is_pacman_in_range());
-		assertTrue(clyde.is_pacman_in_range());
+		assertFalse(clyde.is_pacman_in_range());
 	}
 }
