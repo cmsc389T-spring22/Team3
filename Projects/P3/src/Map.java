@@ -64,6 +64,8 @@ public class Map{
 		field.get(loc).add(type);
 
 		return true;
+
+		
 	}
 	
 	public HashSet<Type> getLoc(Location loc){
