@@ -14,6 +14,6 @@ public class TestMapAttack extends TestCase {
 		Ghost clyde = nf.addGhost(new Location(1, 3), "Clyde", Color.orange);
 
 		assertFalse(map.attack("Blinky"));
-		assertFalse(map.attack("Clyde"));
+		assertTrue(map.attack("Clyde"));
 	}
 }
