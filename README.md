@@ -8,7 +8,7 @@ Group Members: Ishaan Bhasin, Sreyas Chacko, Darren Kam, Selena Xiao
 ## How to run the code from the command line
 To compile and run Pacman, go to the P3 directory and run the following commands:
 ```bash
-javac -cp "src/" src/*.java
+javac -cp "src/" src/*.java 
 java -cp "src/" StartMenu
 ```
 

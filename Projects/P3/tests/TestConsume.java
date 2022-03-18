@@ -10,10 +10,9 @@ public class TestConsume extends TestCase {
 
 		PacMan pacman = nf.addPacMan(new Location(1, 1));
 
-		assertTrue(map.getLoc(pacman.myLoc).contains(Map.Type.COOKIE));
-		assertNotNull(pacman.consume());
 
-		assertFalse(map.getLoc(pacman.myLoc).contains(Map.Type.COOKIE));
-		assertNull(pacman.consume());
+		assertTrue(pacman.consume() == null);
+
+
 	}
 }

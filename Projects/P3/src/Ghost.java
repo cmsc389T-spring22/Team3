@@ -15,29 +15,29 @@ public class Ghost{
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validLocs = new ArrayList<Location>();
 
-		validLocs.add(new Location(myLoc.x, myLoc.y + 100));
-
-		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x - 1, myLoc.y));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x + 1, myLoc.y));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.EMPTY) ||myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x, myLoc.y - 1));
 		} 
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.EMPTY)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.EMPTY) || myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.COOKIE)) {
 			validLocs.add(new Location(myLoc.x, myLoc.y + 1));
 		}
 		return validLocs;
 	}
 
 	public boolean move() {
-		ArrayList<Location> valid_moves = get_valid_moves();
-		// if (valid_moves.size() > 0) {
-		// 	return myMap.move(myName, valid_moves.get(0), Map.Type.GHOST); 
-		// }
-
+		ArrayList<Location> possibleLocations = get_valid_moves();
+		if (possibleLocations.size() != 0) {
+			int randomIndx = 0;
+			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.GHOST);
+			return true;
+		}
 		return false;
 	}
 

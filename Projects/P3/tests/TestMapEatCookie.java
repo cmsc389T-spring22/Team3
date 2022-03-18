@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.io.*;
 
 public class TestMapEatCookie extends TestCase {
-	
+
 	public void testMapEatCookie() throws FileNotFoundException {
 		NoFrame nf = new NoFrame();
 
@@ -16,6 +16,6 @@ public class TestMapEatCookie extends TestCase {
 		PacMan pc = nf.addPacMan(loc);
 		m.eatCookie(pc.myName);
 
-		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));
+		assertTrue(m.getLoc(loc).contains(Map.Type.COOKIE));
 	}
 }
