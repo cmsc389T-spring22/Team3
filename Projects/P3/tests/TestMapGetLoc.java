@@ -10,6 +10,6 @@ public class TestMapGetLoc extends TestCase{
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		assertTrue(frame.getMap().getLoc(new Location(3,3)).contains(Map.Type.WALL));
-		assertTrue(frame.getMap().getLoc(new Location(3,2)).contains(Map.Type.WALL));
+		assertFalse(frame.getMap().getLoc(new Location(3,2)).contains(Map.Type.WALL));
 	}
 }
