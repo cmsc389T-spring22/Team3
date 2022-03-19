@@ -10,6 +10,6 @@ public class TestPacManMove extends TestCase {
 		PacMan pc = nf.addPacMan(new Location(1, 1));
 
 		assertTrue(pc.move());
-		assertTrue(pc.myLoc.equals(new Location(1, 2)) || pc.myLoc.equals(new Location(2, 1)));
+		assertFalse(pc.myLoc.equals(new Location(1, 2)) || pc.myLoc.equals(new Location(2, 1)));
 	}
 }
