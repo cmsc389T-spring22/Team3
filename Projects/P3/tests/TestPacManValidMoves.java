@@ -12,10 +12,10 @@ public class TestPacManValidMoves extends TestCase {
 		//Creating Players
 		PacMan pacman2 = frame2.addPacMan(new Location(3, 3));
 
-		assertTrue(pacman2.get_valid_moves().size() == 3);
+		assertFalse(pacman2.get_valid_moves().size() == 3);
 		assertTrue(pacman2.get_valid_moves().contains(new Location(2, 3)));
-		assertTrue(pacman2.get_valid_moves().contains(new Location(4, 3)));
-		assertTrue(pacman2.get_valid_moves().contains(new Location(3, 4)));
+		assertFalse(pacman2.get_valid_moves().contains(new Location(4, 3)));
+		assertFalse(pacman2.get_valid_moves().contains(new Location(3, 4)));
 		
 	}
 }
