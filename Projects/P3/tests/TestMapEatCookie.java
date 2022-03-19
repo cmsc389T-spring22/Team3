@@ -11,7 +11,7 @@ public class TestMapEatCookie extends TestCase {
 
 		Location loc = new Location(1, 1);
 
-		assertTrue(m.getLoc(loc).contains(Map.Type.COOKIE));
+		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));
 
 		PacMan pc = nf.addPacMan(loc);
 		m.eatCookie(pc.myName);
