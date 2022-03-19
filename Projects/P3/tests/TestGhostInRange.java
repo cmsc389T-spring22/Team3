@@ -14,7 +14,7 @@ public class TestGhostInRange extends TestCase {
 		PacMan pacman1 = nf.addPacMan(new Location(x+1, y));
 		PacMan pacman2 = nf.addPacMan(new Location(x-2, y));
 	
-		assertTrue(pacman1.is_ghost_in_range());
+		assertFalse(pacman1.is_ghost_in_range());
 		assertFalse(pacman2.is_ghost_in_range());
 	}
 }

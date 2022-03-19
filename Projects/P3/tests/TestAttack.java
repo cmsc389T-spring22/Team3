@@ -13,6 +13,6 @@ public class TestAttack extends TestCase {
 		Ghost clyde = nf.addGhost(new Location(1, 3), "Clyde", Color.orange);
 
 		assertTrue(blinky.attack());
-		assertFalse(clyde.attack());
+		assertTrue(clyde.attack());
 	}
 }
