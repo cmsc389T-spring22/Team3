@@ -10,7 +10,7 @@ public class TestMapMove extends TestCase {
 		int x = 5;
 		int y = 5;
 		Ghost ghost = frame.addGhost(new Location(x, y), "ghost", Color.red);
-		PacMan pacman = frame.addPacMan(new Location(x+1, y));
+		PacMan pacman = frame.addPacMan(new Location(x, y+2));
 
 		assertTrue(ghost.move());
 		assertTrue(pacman.move());
